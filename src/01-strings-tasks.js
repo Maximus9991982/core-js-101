@@ -52,7 +52,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return 'Hello, ' + firstName + ' ' + lastName + '!';
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -81,7 +81,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-  return value.substring(0, 1)
+  return value.substring(0, 1);
 }
 
 /**
@@ -146,7 +146,6 @@ function unbracketTag(str) {
 }
 
 
-
 /**
  * Converts all characters of the specified string into the upper case
  *
@@ -158,7 +157,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-  return str.toUpperCase()
+  return str.toUpperCase();
 }
 
 /**
@@ -177,7 +176,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  return str.split(';')
+  return str.split(';');
 }
 
 /**
@@ -242,8 +241,8 @@ function encodeToRot13(/* str */) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof(value) == 'string') return true;
-  else return false;
+  if (typeof (value) === 'string') return true;
+  return false;
 }
 
 
