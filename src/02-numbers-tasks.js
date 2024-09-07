@@ -224,12 +224,16 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(value, def) {
-  let result;
-  if (typeof (parseInt(value, 2) === 'number')) result = parseInt(value, 2);
-  else if (typeof (value) === 'number') result = value;
-  else result = def;
-  return result;
+// function toNumber(value, def) {
+//   let result;
+//   if (typeof (parseInt(value, 2) === 'number')) result = parseInt(value, 2);
+//   else if (typeof (value) === 'number') result = value;
+//   else result = def;
+//   return result;
+// }
+
+function toNumber(/* value, def */) {
+  throw new Error('Not implemented');
 }
 
 
