@@ -203,15 +203,13 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  
-  let result = '┌' + '-'.repeat(width - 2) + '┐' + '\n';
-  
-  result = result + ('|' + ' '.repeat(width - 2) + '|' + '\n').repeat(height-2);
-  
-  result = result + '└' + '-'.repeat(width - 2) + '┘' + '\n';
-  
+  let result = `┌${'─'.repeat(width - 2)}┐\n`;
+
+  result += (`│${' '.repeat(width - 2)}│\n`).repeat(height - 2);
+
+  result = `${result}└${'─'.repeat(width - 2)}┘\n`;
+
   return result;
-  
 }
 
 
@@ -232,22 +230,21 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  
   let result = '';
-  
+
   const etal = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,;:!?';
   const toEtal = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm .,;:!?';
-  
-//   console.log(etal[2]);
 
-for (let i = 0; i < str.length; i++) {
-    for (let j = 0; j < etal.length; j++) {
-        if (str[i] == etal[j]) {
-            result = result + toEtal[j];
-        }
+  //   console.log(etal[2]);
+
+  for (let i = 0; i < str.length; i += 1) {
+    for (let j = 0; j < etal.length; j += 1) {
+      if (str[i] === etal[j]) {
+        result += toEtal[j];
+      }
     }
-}
-  
+  }
+
   return result;
 }
 
@@ -265,8 +262,10 @@ for (let i = 0; i < str.length; i++) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof (value) === 'string') return true;
-  return false;
+  let result;
+  if (typeof (value) === 'string' || typeof (value) === 'object') result = true;
+  else result = false;
+  return result;
 }
 
 
@@ -295,14 +294,12 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-  
-  const arr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
- 'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
- 'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
- 'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
-  
+  const arr = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
+
   return arr.indexOf(value);
-      
 }
 
 
