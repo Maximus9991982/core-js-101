@@ -241,7 +241,7 @@ function toNumber(value, def) {
   // console.log(typeof Number(value));
   // console.log(Number(value) == NaN);
 
-  if (typeof Number(value) === 'number' && !Number(value).isNaN(NaN)) return Number(value);
+  if (typeof Number(value) === 'number' && !Number.isNaN(Number(value))) return Number(value);
   return def;
 }
 
