@@ -20,8 +20,16 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  let index = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] === value) {
+      index = 1;
+      return i;
+    }
+  }
+  if (index === 0) return -1;
+  return null;
 }
 
 /**
