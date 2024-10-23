@@ -239,8 +239,14 @@ function isPrime(n) {
 //   return result;
 // }
 
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+    
+    // console.log(typeof Number(value));
+        // console.log(Number(value) == NaN);
+ 
+  if (typeof Number(value) == 'number' && Number(value) != NaN) return Number(value)
+  else return def;
+  
 }
 
 
