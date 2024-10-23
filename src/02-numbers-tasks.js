@@ -207,13 +207,11 @@ function roundToPowerOfTen(/* num, pow */) {
  */
 function isPrime(n) {
   let counter = 0;
-  
-  for (let i = 1; i <= n; i++)
-    if (n % i == 0) 
-    counter ++;
-    
-  if (counter == 2) return true;
-  else return false;  
+
+  for (let i = 1; i <= n; i += 1) if (n % i === 0) counter += 1;
+
+  if (counter === 2) return true;
+  return false;
 }
 
 /**
@@ -240,13 +238,11 @@ function isPrime(n) {
 // }
 
 function toNumber(value, def) {
-    
-    // console.log(typeof Number(value));
-        // console.log(Number(value) == NaN);
- 
-  if (typeof Number(value) == 'number' && Number(value) != NaN) return Number(value)
-  else return def;
-  
+  // console.log(typeof Number(value));
+  // console.log(Number(value) == NaN);
+
+  if (typeof Number(value) === 'number' && !Number(value).isNaN(NaN)) return Number(value);
+  return def;
 }
 
 
